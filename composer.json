@@ -42,5 +42,55 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ]
+    ],
+    "extra": {
+        "config-plugin-output-dir": "build/configs",
+        "config-plugin": {
+            "constants": [
+                "common/config/constants-local.php"
+            ],
+            "params": [
+                "common/config/params.php",
+                "?common/config/params-local.php"
+            ],
+            "params_frontend": [
+                "$params",
+                "frontend/config/params.php",
+                "?frontend/config/params-local.php"
+            ],
+            "params_backend": [
+                "$params",
+                "backend/config/params.php",
+                "?backend/config/params-local.php"
+            ],
+            "params_console": [
+                "$params",
+                "console/config/params.php",
+                "?console/config/params-local.php"
+            ],
+            "common": [
+                "common/config/main.php",
+                "?common/config/main-local.php"
+            ],
+            "backend": [
+                "$common",
+                "backend/config/main.php",
+                "?backend/config/main-local.php"
+            ],
+            "console": [
+                "$common",
+                "console/config/main.php",
+                "?console/config/main-local.php"
+            ],
+            "frontend": [
+                "$common",
+                "frontend/config/main.php",
+                "?frontend/config/main-local.php"
+            ],
+            "test": [
+                "common/config/test.php",
+                "?common/config/test-local.php"
+            ]
+        }
+    }
 }
